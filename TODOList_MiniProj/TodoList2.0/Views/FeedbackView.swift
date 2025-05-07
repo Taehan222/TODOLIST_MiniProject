@@ -5,7 +5,6 @@
 //  Created by 윤태한 on 5/1/25.
 //
 
-
 import SwiftUI
 import FirebaseFirestore
 
@@ -95,9 +94,4 @@ struct FeedbackView: View {
             }
         }
     }
-}
-
-
-#Preview {
-    FeedbackView(email: "example@email.com")
 }

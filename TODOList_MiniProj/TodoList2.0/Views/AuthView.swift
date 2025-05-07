@@ -164,7 +164,7 @@ struct AuthView: View {
                 if isProcessing {
                     Color.black.opacity(0.4)
                         .ignoresSafeArea()
-                    ProgressView(NSLocalizedString("processing", comment: "")) // "처리중..."
+                    ProgressView(NSLocalizedString("processing", comment: ""))
                         .padding()
                         .background(Color(.systemBackground))
                         .cornerRadius(10)
@@ -372,8 +372,4 @@ struct AuthView: View {
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         return emailPredicate.evaluate(with: email)
     }
-}
-
-#Preview {
-    AuthView()
 }

@@ -56,7 +56,7 @@ struct TODOView: View {
                         Spacer()
                         Text("할 일이 없습니다.")
                             .foregroundColor(.secondary)
-                            .frame(maxWidth: .infinity, alignment: .center) // 텍스트를 가운데 정렬
+                            .frame(maxWidth: .infinity, alignment: .center)
                         Spacer()
                     } else {
                         List {
@@ -374,12 +374,4 @@ struct AddTodoView: View {
         }
         .background(overallBackground)
     }
-}
-
-
-
-
-
-#Preview {
-    TODOView(email: "user@example.com", selectedTab: .constant(0))
 }

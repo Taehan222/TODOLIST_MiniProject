@@ -223,7 +223,3 @@ struct ProfileView: View {
         return true
     }
 }
-
-#Preview {
-    ProfileView(isLoggedIn: .constant(true), name: .constant("홍길동"), email: .constant("user@example.com"))
-}

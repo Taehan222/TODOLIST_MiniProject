@@ -97,7 +97,3 @@ struct SignupFormView: View {
         return emailPred.evaluate(with: email)
     }
 }
-
-#Preview {
-    SignupFormView(isLoggedIn: .constant(false), name: .constant(""), email: .constant(""))
-}

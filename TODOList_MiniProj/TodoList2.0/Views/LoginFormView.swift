@@ -133,7 +133,3 @@ struct LoginFormView: View {
     }
 
 }
-
-#Preview {
-    LoginFormView(isLoggedIn: .constant(false), name: .constant(""), email: .constant(""))
-}
