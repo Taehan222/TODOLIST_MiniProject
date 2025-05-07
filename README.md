@@ -1,6 +1,6 @@
 # TODOList2.0
 
-![App GIF](./path/to/screenshot.gif)
+![App GIF](./screenshot.gif)
 
 ## 소개
 
