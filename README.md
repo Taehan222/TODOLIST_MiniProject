@@ -1,10 +1,10 @@
 # TODOList2.0
 
-![App GIF](./screenshot.gif)
-
 ## 소개
 
 TODOList2.0은 사용자가 할 일을 손쉽게 관리할 수 있는 iOS 앱입니다. 회원가입 후 로그인하여 개인화된 투두리스트를 작성하고, 여러 기기 간 실시간 동기화를 지원합니다.
+
+📱 App Store: [TODO2.0](https://apps.apple.com/kr/app/todo2-0/id6741896814)
 
 ## 주요 기능
 
@@ -48,3 +48,17 @@ TODOList2.0은 사용자가 할 일을 손쉽게 관리할 수 있는 iOS 앱입
 ## 기여
 
 PR과 이슈 환영합니다.
+
+## 라이선스
+
+All Rights Reserved.
+
+이 프로젝트의 소스 코드는 저작권자로부터 명시적인 허가를 받지 않는 한 사용, 복사, 수정, 배포할 수 없습니다.
+
+
+
+## 스크린샷
+
+![App GIF](./screenshot.gif)
+
+
