@@ -55,8 +55,6 @@ All Rights Reserved.
 
 이 프로젝트의 소스 코드는 저작권자로부터 명시적인 허가를 받지 않는 한 수정, 배포할 수 없습니다.
 
-
-
 ## 스크린샷
 
 ![App GIF](./screenshot.gif)
